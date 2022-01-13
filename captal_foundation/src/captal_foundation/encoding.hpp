@@ -28,6 +28,7 @@
 #include <iterator>
 #include <concepts>
 #include <ranges>
+#include <limits>
 
 namespace cpt
 {

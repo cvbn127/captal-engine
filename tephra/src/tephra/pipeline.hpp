@@ -152,23 +152,23 @@ struct specialisation_info
 
 struct pipeline_shader_stage
 {
-    std::reference_wrapper<shader> shader;
+    std::reference_wrapper<tph::shader> shader;
     std::string name{"main"};
-    specialisation_info specialisation_info{};
+    tph::specialisation_info specialisation_info{};
 };
 
 struct vertex_input_binding
 {
     std::uint32_t binding{};
     std::uint32_t stride{};
-    vertex_input_rate input_rate{vertex_input_rate::vertex};
+    tph::vertex_input_rate input_rate{tph::vertex_input_rate::vertex};
 };
 
 struct vertex_input_attribute
 {
     std::uint32_t location{};
     std::uint32_t binding{};
-    vertex_format format{};
+    tph::vertex_format format{};
     std::uint32_t offset{};
 };
 
@@ -198,9 +198,9 @@ struct pipeline_viewport
 
 struct pipeline_rasterization
 {
-    polygon_mode polygon_mode{polygon_mode::fill};
-    cull_mode cull_mode{cull_mode::none};
-    front_face front_face{front_face::counter_clockwise};
+    tph::polygon_mode polygon_mode{polygon_mode::fill};
+    tph::cull_mode cull_mode{cull_mode::none};
+    tph::front_face front_face{front_face::counter_clockwise};
     float line_width{1.0f};
     bool depth_clamp{};
     bool rasterizer_discard{};
@@ -212,7 +212,7 @@ struct pipeline_rasterization
 
 struct pipeline_multisample
 {
-    sample_count sample_count{sample_count::msaa_x1};
+    tph::sample_count sample_count{sample_count::msaa_x1};
     float sample_shading{};
     const std::uint32_t* sample_mask{};
     bool alpha_to_coverage{};
@@ -224,7 +224,7 @@ struct stencil_op_description
     stencil_op fail_op{stencil_op::keep};
     stencil_op pass_op{stencil_op::keep};
     stencil_op depth_fail_op{stencil_op::keep};
-    compare_op compare_op{compare_op::never};
+    tph::compare_op compare_op{compare_op::never};
     std::uint32_t compare_mask{};
     std::uint32_t write_mask{};
     std::uint32_t reference{};
@@ -258,7 +258,7 @@ struct pipeline_color_blend_attachment
 struct pipeline_color_blend
 {
     bool logic_op_enable{};
-    logic_op logic_op{logic_op::set};
+    tph::logic_op logic_op{logic_op::set};
     std::vector<pipeline_color_blend_attachment> attachments{};
     std::array<float, 4> blend_constants{};
 };

@@ -49,7 +49,7 @@ struct swapchain_info
     tph::texture_usage usage{tph::texture_usage::color_attachment};
     surface_transform transform{surface_transform::identity};
     surface_composite composite{surface_composite::opaque};
-    present_mode present_mode{present_mode::fifo};
+    tph::present_mode present_mode{present_mode::fifo};
     bool clipping{true};
 };
 

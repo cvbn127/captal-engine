@@ -126,13 +126,13 @@ private:
         std::uint64_t granularity{};
         std::uint64_t non_coherent_atom_size{};
         std::uint64_t map_count{};
-        std::vector<range> ranges{};
+        std::vector<tph::vulkan::memory_heap::range> ranges{};
         mutable std::mutex mutex{};
     };
 
     struct dedicated_heap
     {
-        std::optional<range> range{};
+        std::optional<tph::vulkan::memory_heap::range> range{};
     };
 
 public:
