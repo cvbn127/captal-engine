@@ -90,6 +90,14 @@ target_link_libraries(tephra
         captal_foundation
 )
 
+if (TEPHRA_USE_PLATFORM_XLIB)
+    find_package(X11 REQUIRED)
+    target_link_libraries(tephra
+        PRIVATE
+            X11
+    )
+endif()
+
 target_compile_definitions(tephra
     PUBLIC
         $<$<BOOL:${TEPHRA_USE_PLATFORM_ANDROID}>:TPH_PLATFORM_ANDROID>
