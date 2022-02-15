@@ -6,6 +6,7 @@ project(captal_engine VERSION 0.1.0
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POLICY_DEFAULT_CMP0069 NEW)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(CAPTAL_USE_LTO "Build Captal and its submodules with LTO enabled, if supported" OFF)
 option(CAPTAL_USE_CUSTOM_C_FLAGS "Build Captal and its submodules with predefined compiler options, if supported." ON)
